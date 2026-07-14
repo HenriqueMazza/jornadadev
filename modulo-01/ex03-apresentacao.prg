@@ -1,10 +1,10 @@
 FUNCTION main()
     LOCAL nName := "Henrique" // Declara variavel
-    LOCAL nCity := "Po†" // Declara variavel
+    LOCAL nCity := "Po√°" // Declara variavel
     LOCAL nCurso := "Harbour/ADVPL" // Declara variavel
     hb_cdpSelect("PT850") 
     QOut("===========================")
-    QOut("  FICHA DE APRESENTAÄ«O ")
+    QOut("  FICHA DE APRESENTA√á√ÉO ")
     QOut("===========================")
     QOut("Nome: " + nName)
     QOut("Cidade: " + nCity)
