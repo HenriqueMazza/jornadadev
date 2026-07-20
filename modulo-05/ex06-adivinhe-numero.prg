@@ -36,14 +36,14 @@ FUNCTION main()
         ENDIF
     NEXT
 
-    QOut("=========================================")
+    QOut("==========================================")
     IF lAcertou
         QOut("Parabens! Voce acertou o numero: " + AllTrim(STR(nSecreto)))
     ELSE
         QOut("FIM DE JOGO! Suas tentativas acabaram.")
         QOut("O numero secreto era: " + AllTrim(STR(nSecreto)))
     ENDIF
-    QOut("=========================================")
+    QOut("==========================================")
     QOut("")
 
 RETURN NIL
