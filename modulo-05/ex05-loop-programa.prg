@@ -74,6 +74,7 @@ FUNCTION main()
         QOut("Media das duas notas: " + Alltrim(STR((nNota1 + nNota2) / 2)))
         QOut("")
 
+        //Verificando se a resposta é S ou N, encerrando ou continuando loop
         cResp := ""
         WHILE cResp != "S" .AND. cResp != "N"
             ACCEPT "Deseja calcular outro? (S/N): " TO cResp
