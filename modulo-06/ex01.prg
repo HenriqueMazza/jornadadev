@@ -1,5 +1,0 @@
-FUNCTION main ()
-
-
-    
-RETURN NIL

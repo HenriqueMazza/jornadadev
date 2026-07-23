@@ -1,5 +1,4 @@
 # Exercício 1 — Isto é um algoritmo válido?
-o.
 
 ---
 
