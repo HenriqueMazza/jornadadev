@@ -5,11 +5,10 @@ FUNCTION Main()
     QOut("Vetor original (desordenado):")
     ExibirVetor(aNumeros)
 
-    // Chamada da função manual de ordenação
     BubbleSort(aNumeros)
 
     QOut("")
-    QOut("Vetor apos o Bubble Sort (ordenado):")
+    QOut("Vetor apos o Bubble Sort:")
     ExibirVetor(aNumeros)
 
 RETURN NIL
@@ -47,5 +46,5 @@ FUNCTION ExibirVetor(aV)
         QQOut(AllTrim(Str(aV[nI])) + " ")
     NEXT nI
     QOut("") 
-    
+
 RETURN NIL

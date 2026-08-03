@@ -1,6 +1,6 @@
-# Exercício 1 — Função ou Procedimento? (Conceitual)
+# Exercício 1 — Função ou Procedimento?
 
-Abaixo está a classificação de cada item conforme sua finalidade na linguagem de programação (ex.: AdvPL / Clipper), acompanhada de sua respectiva justificativa:
+Classificação de cada item conforme sua finalidade na linguagem de programação (ex.: AdvPL / Clipper), acompanhada de sua respectiva justificativa:
 
 ---
 
@@ -26,8 +26,4 @@ Abaixo está a classificação de cada item conforme sua finalidade na linguagem
 * **Classificação:** Função
 * **Justificativa:** Calcula e retorna um número inteiro representando a quantidade de elementos em um *array* ou caracteres em uma *string*.
 
----
-
-### **5. `Upper()` — Função**
-* **Classificação:** Função
-* **Justificativa:** Processa o texto fornecido e retorna uma nova *string* com todos os caracteres alfabéticos convertidos para maiúsculas.
+--- 
