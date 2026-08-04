@@ -25,4 +25,4 @@
 
 ### d. Explique por que os campos começam com ZA1_ (ex: ZA1_NOME , ZA1_RACA ) e não apenas com o nome do campo solto.
 
-**Resposta:** O prefixo **ZA1_** indica a qual tabela aquele campo pertence de forma direta. Essa padronização evita que ocorra confusão com campos idênticos de outras tabelas e garante a organização do repositório no Protheus.
+**Resposta:** O prefixo ZA1_ indica a qual tabela aquele campo pertence de forma direta. Essa padronização evita que ocorra confusão com campos idênticos de outras tabelas e garante a organização do repositório no Protheus.
