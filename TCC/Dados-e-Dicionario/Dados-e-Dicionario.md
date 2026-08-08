@@ -1,0 +1,1 @@
+# Descrição e explicação do dicionario feito no README.md Devido a problemas na conversão de DBF → CSV
