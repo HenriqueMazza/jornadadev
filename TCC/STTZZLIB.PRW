@@ -5,7 +5,7 @@
     Autor    : Henrique Rodrigues Mazza do Valle
     Data     : 08/2026
 
-    Biblioteca de funções comuns utilizadas no TCC.
+    Biblioteca de funï¿½ï¿½es comuns utilizadas no TCC.
 */
 
 User Function STTZZLIB()
@@ -22,7 +22,7 @@ User Function NomeFornecedor(cFornec,cLoja)
     Default cFornec := ""
     Default cLoja   := ""
 
-    // Busca o nome do fornecedor caso o código tenha sido informado
+    // Busca o nome do fornecedor caso o cï¿½digo tenha sido informado
     If !Empty(cFornec)
         cNome := Posicione("SA2",1,xFilial("SA2")+cFornec+cLoja,"A2_NOME")
     EndIf
@@ -30,7 +30,7 @@ User Function NomeFornecedor(cFornec,cLoja)
 Return cNome
 
 /*-------------------------------------------------------------------*/
-/* Retorna a descrição do produto pela SB1 */
+/* Retorna a descriï¿½ï¿½o do produto pela SB1 */
 /*-------------------------------------------------------------------*/
 
 User Function NomeProduto(cCodPro)
@@ -39,7 +39,7 @@ User Function NomeProduto(cCodPro)
 
     Default cCodPro := ""
 
-    // Localiza a descrição do produto
+    // Localiza a descriï¿½ï¿½o do produto
     If !Empty(cCodPro)
         cDesc := Posicione("SB1",1,xFilial("SB1")+cCodPro,"B1_DESC")
     EndIf
@@ -47,7 +47,7 @@ User Function NomeProduto(cCodPro)
 Return cDesc
 
 /*-------------------------------------------------------------------*/
-/* Calcula o percentual de não conformidade */
+/* Calcula o percentual de nï¿½o conformidade */
 /*-------------------------------------------------------------------*/
 
 User Function PercNaoConforme(nOk,nNok)
@@ -57,7 +57,7 @@ User Function PercNaoConforme(nOk,nNok)
     Default nOk  := 0
     Default nNok := 0
 
-    // Evita divisão por zero
+    // Evita divisï¿½o por zero
     If (nOk + nNok) > 0
         nPerc := (nNok / (nOk + nNok)) * 100
     EndIf
@@ -65,7 +65,7 @@ User Function PercNaoConforme(nOk,nNok)
 Return nPerc
 
 /*-------------------------------------------------------------------*/
-/* Verifica se o certificado vence nos próximos 30 dias */
+/* Verifica se o certificado vence nos prï¿½ximos 30 dias */
 /*-------------------------------------------------------------------*/
 
 User Function CertificadoVencendo(dValCer)
@@ -84,7 +84,7 @@ User Function CertificadoVencendo(dValCer)
 Return lRet
 
 /*-------------------------------------------------------------------*/
-/* Grava erros da aplicação em um arquivo de log */
+/* Grava erros da aplicaï¿½ï¿½o em um arquivo de log */
 /*-------------------------------------------------------------------*/
 
 User Function GravarLogTCC(cFuncao,oErro)
@@ -95,12 +95,12 @@ User Function GravarLogTCC(cFuncao,oErro)
 
     If oErro <> NIL
 
-        // Monta uma linha com data, hora, função e descrição do erro
+        // Monta uma linha com data, hora, funï¿½ï¿½o e descriï¿½ï¿½o do erro
         cLinha := "[" + DToC(Date()) + " " + Time() + "] " + ;
                   cFuncao + " - " + ;
                   oErro:Description + CRLF
 
-        // Salva o log para facilitar futuras análises
+        // Salva o log para facilitar futuras anï¿½lises
         MemoWrite("TCC_ERRO.LOG",cLinha)
 
     EndIf

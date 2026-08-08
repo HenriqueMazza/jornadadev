@@ -96,7 +96,7 @@ Também foram configuradas as tabelas customizadas **ZZ1** e **ZZ2**, seus campo
 
 A documentação técnica completa do projeto está disponível em:
 
-**[Documentação Técnica do Projeto](TCC-Documentacao.docx)**
+**[Documentação Técnica do Projeto](TCC-Documentacao.pdf)**
 
 O documento contém as explicações detalhadas das rotinas, configurações, regras de negócio, procedimentos e evidências do desenvolvimento.
 
