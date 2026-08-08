@@ -5,7 +5,7 @@ Programa : STTZZ1.PRW
 Autor    : Henrique Rodrigues Mazza do Valle
 Data     : 08/2026
 
-Rotina de manutenção da tabela ZZ1.
+Rotina de manutenï¿½ï¿½o da tabela ZZ1.
 */
 
 User Function STTZZ1()
@@ -26,8 +26,8 @@ User Function STTZZ1()
             { "!Empty(ZZ1_VALCER)", "BR_VERDE" } ;
         }
 
-        // Define as operações disponíveis no mBrowse
-        // A inclusão e alteração utilizam as validações da ZZ1
+        // Define as operaï¿½ï¿½es disponï¿½veis no mBrowse
+        // A inclusï¿½o e alteraï¿½ï¿½o utilizam as validaï¿½ï¿½es da ZZ1
         aRotina := { ;
             { "Pesquisar",  "AxPesqui",    0, 1 }, ;
             { "Visualizar", "AxVisual",    0, 2 }, ;
@@ -36,18 +36,18 @@ User Function STTZZ1()
             { "Excluir",    "AxDeleta",    0, 5 } ;
         }
 
-        // Botão para visualizar as ocorrências do controle selecionado
+        // Botï¿½o para visualizar as ocorrï¿½ncias do controle selecionado
         aAdd(aRotAdic, ;
-            { "Ocorrências", "U_STTZZ2FLT(ZZ1->ZZ1_CODIGO)", 0, 2 } )
+            { "Ocorrï¿½ncias", "U_STTZZ2FLT(ZZ1->ZZ1_CODIGO)", 0, 2 } )
 
         // Abre o mBrowse da tabela ZZ1
         mBrowse(6,1,22,75,cAlias,,,,,aCores,,aRotAdic)
 
     RECOVER USING oError
 
-        // Registra o erro em log e informa o usuário
+        // Registra o erro em log e informa o usuï¿½rio
         U_GravarLogTCC("STTZZ1",oError)
-        MsgStop("Erro ao executar a rotina.","Atenção")
+        MsgStop("Erro ao executar a rotina.","Atenï¿½ï¿½o")
 
     END SEQUENCE
 
@@ -56,16 +56,16 @@ Return NIL
 
 /*
 Programa : STTZZ1.PRW
-Função   : IncluiZZ1
-Objetivo : Realizar a inclusão de registros da ZZ1
-           utilizando as validações da função ValidacoesZZ1.
+Funï¿½ï¿½o   : IncluiZZ1
+Objetivo : Realizar a inclusï¿½o de registros da ZZ1
+           utilizando as validaï¿½ï¿½es da funï¿½ï¿½o ValidacoesZZ1.
 */
 
 User Function IncluiZZ1(cAlias,nReg,nOpc)
 
     Local cTudoOk := "U_ValidacoesZZ1()"
 
-    // Executa a inclusão utilizando a validação antes da gravação
+    // Executa a inclusï¿½o utilizando a validaï¿½ï¿½o antes da gravaï¿½ï¿½o
     AxInclui(cAlias,nReg,nOpc,,,,cTudoOk)
 
 Return NIL
@@ -73,24 +73,24 @@ Return NIL
 
 /*
 Programa : STTZZ1.PRW
-Função   : AlteraZZ1
-Objetivo : Realizar a alteração de registros da ZZ1
-           utilizando as validações da função ValidacoesZZ1.
+Funï¿½ï¿½o   : AlteraZZ1
+Objetivo : Realizar a alteraï¿½ï¿½o de registros da ZZ1
+           utilizando as validaï¿½ï¿½es da funï¿½ï¿½o ValidacoesZZ1.
 */
 
 User Function AlteraZZ1(cAlias,nReg,nOpc)
 
     Local cTudoOk := "U_ValidacoesZZ1()"
 
-    // Executa a alteração utilizando a validação antes da gravação
+    // Executa a alteraï¿½ï¿½o utilizando a validaï¿½ï¿½o antes da gravaï¿½ï¿½o
     AxAltera(cAlias,nReg,nOpc,,,,cTudoOk)
 
 Return NIL
 
 
 /*
-Função : ValidacoesZZ1
-Objetivo: Validar os dados da tabela ZZ1 antes da gravação.
+Funï¿½ï¿½o : ValidacoesZZ1
+Objetivo: Validar os dados da tabela ZZ1 antes da gravaï¿½ï¿½o.
 */
 
 User Function ValidacoesZZ1()
@@ -99,15 +99,15 @@ User Function ValidacoesZZ1()
 
     BEGIN SEQUENCE
 
-        // Validação 1: O fornecedor deve existir na tabela SA2
+        // Validaï¿½ï¿½o 1: O fornecedor deve existir na tabela SA2
         If !Empty(M->ZZ1_FORNEC)
 
             If !ExistCpo("SA2", ;
                 xFilial("SA2") + M->ZZ1_FORNEC + M->ZZ1_LOJAFO, 1)
 
                 MsgStop( ;
-                    "O fornecedor informado não está cadastrado na SA2.", ;
-                    "Validação" )
+                    "O fornecedor informado nï¿½o estï¿½ cadastrado na SA2.", ;
+                    "Validaï¿½ï¿½o" )
 
                 lRet := .F.
                 Break
@@ -117,14 +117,14 @@ User Function ValidacoesZZ1()
         EndIf
 
 
-        // Validação 2: A validade do certificado não pode ser anterior à data atual
+        // Validaï¿½ï¿½o 2: A validade do certificado nï¿½o pode ser anterior ï¿½ data atual
         If INCLUI .And. !Empty(M->ZZ1_VALCER)
 
             If M->ZZ1_VALCER < dDataBase
 
                 MsgStop( ;
-                    "A validade do certificado não pode ser anterior à data atual.", ;
-                    "Validação" )
+                    "A validade do certificado nï¿½o pode ser anterior ï¿½ data atual.", ;
+                    "Validaï¿½ï¿½o" )
 
                 lRet := .F.
                 Break
@@ -134,12 +134,12 @@ User Function ValidacoesZZ1()
         EndIf
 
 
-        // Validação 3: A tolerância deve estar entre 0 e 100
+        // Validaï¿½ï¿½o 3: A tolerï¿½ncia deve estar entre 0 e 100
         If M->ZZ1_TOLERA < 0 .Or. M->ZZ1_TOLERA > 100
 
             MsgStop( ;
-                "A tolerância deve estar entre 0 e 100.", ;
-                "Validação" )
+                "A tolerï¿½ncia deve estar entre 0 e 100.", ;
+                "Validaï¿½ï¿½o" )
 
             lRet := .F.
             Break
